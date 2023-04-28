@@ -1,0 +1,46 @@
+\input{head.tex}
+%\usepackage[Bjornstrup]{fncychap}
+\usepackage{tikzrput}
+\makeatletter
+\newdimen\tdim
+\def\@makechapterhead#1{%
+    \vspace *{50\p@ }%
+    {\fboxsep0pt\relax
+    \tdim\paperwidth\relax
+    \advance\tdim by-\oddsidemargin\relax
+    \colorbox{black!10}{\vbox{\hsize\tdim\relax
+        \ \hfill\ 
+        \rput[l](0,-.4){\scalebox{4}{\Huge \color{black!60}\thechapter}}\\[20mm]%
+        \advance\tdim by-\textwidth
+        \leavevmode\hbox to\tdim{\hss}\parbox{.7\textwidth}{\Huge\bf\color{black!60}#1}\\[1mm]\ 
+    }}}%
+    \par \nobreak \vskip 20\p@ 
+}
+
+\begin{document}
+\maketitle
+	%\fancyhf{}
+	%\fancyhead[RE,LO]{$\thepage$}
+\tableofcontents
+\input{sesion0}
+\input{sesion1}
+\input{sesion2}
+\input{sesion3}
+\input{sesion4}
+\input{sesion5}
+\input{sesion6}
+\input{sesion7}
+\input{sesion8}
+\input{sesion9}
+\input{sesion17}
+\input{sesion18}
+\input{sesion19}
+\input{sesion20}
+\input{sesion21}
+\input{sesion22}
+\input{sesion23}
+\input{sesion24}
+\input{sesion25}
+%\input{PD}
+\bibliography{refrence}
+\end{document}

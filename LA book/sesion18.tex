@@ -1,0 +1,230 @@
+%\usepackage{amsmath}
+	\textbf{تعریف:}
+	فرض کنید $X = \{1,\cdots, n\}$. مجموعه‌ی همه‌ی توابع یک‌به‌یک و پوشا از $X$ به $X$ را مجموعه‌ی جایگشت‌های روی $X$ می‌نامیم و با نماد $S_n$ نمایش می‌دهیم.\\
+	واضح است که
+	 $|S_n| = n!$ 
+	 (که در آن، $|S_n|$ تعداد اعضا‌ی مجموعه‌ی $S_n$ است). فرض کنید $\sigma\in S_n$ یعنی $\sigma: X\rightarrow X$ یک تابع یک به یک و پوشا باشد. معمولاً $\sigma \in S_n$ را به صورت 
+	$$\sigma = \bigg( \begin{array}{ccccc}
+	1  & 2 &3 & \cdots & n\\
+	\sigma(1)     & \sigma(2) &\sigma(3) &\cdots& \sigma(n) 
+	\end{array} \bigg)$$
+	نمایش می‌دهند. به طور مثال:
+	$$
+	\sigma = \bigg( \begin{array}{ccccc}
+	1  & 2 &3\\
+	2 & 3 & 1
+	\end{array} \bigg)
+	$$
+	به این معنی است که $\sigma: \{1,2,3\} \rightarrow \{1,2,3\}$ به طوری که $\sigma(1) = 2$، $\sigma(2)=3$ ، $\sigma(3) = 1$.\\
+	\textbf{تعریف:}
+	فرض کنید $\sigma \in S_n$ به طوری که وجود داشته باشد $x_1,\cdots,x_r \in \{ 1,\cdots,n\}$ به طوری که:
+	$$\delta(i) =  \begin{cases}
+	i+1 & i \in \{x_1,\cdots,x_{r-1}\}\\
+	1 &  i = x_r\\
+	i & i \notin \{x_1,\cdots,x_r\}
+	\end{cases} $$
+	در این صورت $\sigma$ \textbf{دور} به طول $r$ نامیده شده و با نماد $(x_1, \cdots,x_r)$ نمایش داده می‌شود.\\
+	در نتیجه، تعداد کل دور‌ها برابر است با:
+	$${n \choose r} \times (r-1)! = \frac{n!}{r!(n-r)!}(r-1)! = \frac{n!}{r(n-r)!}$$
+	\textbf{تعریف:}
+	هر دور به طول دو را یک \textbf{ترانهش}\footnote{Transposition} گویند.\\
+	\textbf{مثال:}
+	$\sigma = (1,2)$ یک ترانهش در $S_n$ است که $\sigma(1)=2$ و $\sigma(2) = 1$ و به ازای هر $3\leq i \leq n$ $\sigma(i) = i$.
+	
+	\textbf{مثال:}
+	مجموعه‌ی $S_3$ را در نظر بگیرید؛ $|S_3| = 6$ که اعضای آن، به صورت زیر هستند:
+	$$
+	\begin{bmatrix}
+	1 & 2 & 3 \\
+	1 & 2 & 3
+	\end{bmatrix} \; ,\; \;
+	\begin{bmatrix}
+	1 & 2 & 3 \\
+	3 & 1 & 2
+	\end{bmatrix} \; ,\; \;
+	\begin{bmatrix}
+	1 & 2 & 3 \\
+	1 & 3 & 2
+	\end{bmatrix}
+	$$
+	
+	$$
+	\begin{bmatrix}
+	1 & 2 & 3 \\
+	3 & 2 & 1
+	\end{bmatrix} \; ,\; \;
+	\begin{bmatrix}
+	1 & 2 & 3 \\
+	2 & 1 & 3
+	\end{bmatrix} \; ,\; \;
+	\begin{bmatrix}
+	1 & 2 & 3
+	\end{bmatrix}
+	$$
+	
+	$$
+	\begin{bmatrix}
+	1 & 3 & 2
+	\end{bmatrix} \; \; ,\;\;\;
+	\begin{bmatrix}
+	2 & 3
+	\end{bmatrix} \; \; ,\;\;\;
+	\begin{bmatrix}
+	1 & 3
+	\end{bmatrix} \; \; ,\;\;\;
+	\begin{bmatrix}
+	1 & 2
+	\end{bmatrix} \; \; ,\;\;\;
+	\begin{bmatrix}
+	1 & 3
+	\end{bmatrix}\begin{bmatrix}
+	1 & 2
+	\end{bmatrix}
+	$$
+	
+	و همانی.
+	
+	\textbf{قضیه:}
+	هر جایگشت $\sigma \in S_n$ را می‌توان به حاصل‌ضربی از دور‌های دو‌به‌دو مجزا تجزیه کرد و صرف نظر از ترتیب دور‌های این تجزیه، تجزیه‌ی حاصل‌ضرب دور‌های مجزا یکتاست.\\
+	\textbf{طرح اثبات:}
+	$i\in\{1,\cdots,n\}$ را در نظر بگیرید. فرض کنید $r$ کوچکترین عدد طبیعی باشد که $\sigma^r(i) = i$.\\
+	زیرا $\{i,\sigma(i),\sigma^2(i),\cdots,\sigma^n(i)\}\subseteq \{1,\cdots,n\}$. بنابراین بنا به اصل لانه‌ی کبوتری وجود دارد $0\leq r,s \leq n$ که $t\neq s$ به طوری که $\sigma^t(i) = \sigma^s(i)$ (توجه کنید که $i = \sigma^0(i)$ فرض شده است). بنابراین، با فرض این‌که $t<s$، خواهیم داشت $\sigma^{st}(i) = i$.\\
+	حال دور $r$-تایی ($i,\sigma(i),\cdots,\sigma^{r-1}(i)$) را در نظر بگیرید.
+	\begin{itemize}
+		\item تحدید $\sigma$ روی مجموعه‌ی 
+		$\{1,\cdots,n\} \setminus \{i,\sigma(i),\cdots,\sigma^{r-1}(i)\}$
+		یک جایگشت روی $A$ است.
+		\item با استقرا روی تعداد اعضای مجموعه، جایگشت روی $A$ را می‌توان به حاصل‌ضرب دور‌های دو‌به‌دو مجزا تجزیه کرد.
+		\item لذا می‌توان $\sigma$ را به دور‌های دو‌به‌دو مجزا تجزیه کرد.
+	\end{itemize}
+	در مرحله‌ی بعدی اثبات یکتایی، فرض می‌کنیم که $\sigma = \sigma_1\cdots\sigma_r$ و $\sigma = z_1\cdots z_s$ نوشته شده است. ادعا می‌کنیم $r=s$ و به ازای هر $\sigma_i$ یک $z_j$ وجود دارد که $\sigma_i = z_j$. برای اثبات از این‌که $z_1 = (i, \sigma(i),\cdots,\sigma^{t-1}(i))$ است استفاده می‌شود.\\
+	\textbf{نتیجه:}
+	هر جایگشتی را می‌توان به حاصل‌ضربی از ترانهش‌ها تجزیه کرد.\\
+	\textbf{برهان:}
+	کافی است نشان دهیم هر دوری را می‌توان به صورت حاصل‌ضرب ترانهش‌ها نوشت. فرض کنید ($a_1,\cdots,a_m$) یک دور باشد. در این صورت:
+	$$(a_1\cdots a_m) = (a_1 \quad a_2)(a_2 \quad a_3)\cdots(a_{m-1} \quad a_m)$$
+	زیرا قرار دهید $\sigma = (a_1 \cdots a_m)$ و $z_i = (a_i \quad a_{i+1}$ به ازای هر $1\leq i \leq m-1$. فرض کنید $1\leq j \leq m$ و $\sigma(a_j)$ و $z_1\cdots z_m(a_j)$ را به ازای هر $j$ محاسبه می‌کنیم:\\
+	اگر $1\leq j<m$ آنگاه $\sigma(a_j) = a_{j+1}$
+	$$z_1\cdots z_{j-1} z_j z_{j+1} \cdots z_{m-1}(a_j) = z_1\cdots z_{j-1} z_j(a_j) = z_1\cdots z_{j-1}(a_{j+1}) = a_{j+1}$$
+	\textbf{یادداشت ۱:}
+	تجزیه به ترانهش‌ها یکتا نیست؛ علاوه بر تجزیه‌ای که پیش‌تر معرفی شد، تجزیه‌ی زیر هم برقرار است:
+	$$(a_1 \cdots a_m) = (a_1\quad a_m)(a_1 \quad a_{m-1} ) \cdots (a_1 \quad a_2)$$
+	\textbf{درستی‌آزمایی:}
+	قرار دهید $\sigma = (a_1\cdots a_m)$ و $z_i= (a_1 \quad a_i)$ به ازای $2\leq i \leq m$. فرض کنید $1\leq j \leq m$ و $\sigma(a_j) = a_{j+1}$؛ در نتیجه، خواهیم داشت:
+	$$z_m\cdots z_{j+1} z_j z_{j-1}\cdots z_2(a_j) = z_m\cdots z_j(a_j) = z_m \cdots z_{j+1}(a_1) = z_m\cdots z_{j+2}(a_{j+1}) = a_{j+1}$$
+	\textbf{یادداشت ۲:}
+	یک جایگشت در $S_n$ را لزوماً نمی‌توان به صورت تعدادی ترانهش مجزا تجزیه کرد.\\
+	جایگشت $(1 \quad 2 \quad 3)$ را در $S_3$ را در نظر بگیرید:
+	\begin{itemize}
+		\item $(1\quad 2 \quad 3) \neq (a \quad b)$ زیرا جایگشت سمت چپ سه نقطه را حرکت می‌دهد، در صورتی که سمت راست دو نقطه را.
+		\item $(1\quad 2\quad 3) \neq (a \neq b)( c \quad d)$ زیرا به طور مشابه سمت چپ سه نقطه و سمت راست ۴ نقطه را تغییر می‌دهد.
+	\end{itemize}
+	\textbf{قضیه:}
+	اگر $\sigma \in S_n$ را بتوان هم به حاصل‌ضرب $r$ ترانهش و هم حاصل‌ضرب $s$ ترانهش نوشت، آنگاه $r$ و $s$ یا هر دو زوج هستند و یا هر دو فرد.\\
+	\textbf{تعریف:}
+	جایگشت $\sigma \in S_n$ را زوج 
+	گوییم هر گاه بتوان آن را به صورت حاصل‌ضرب تعداد زوجی ترانهش نوشت و $\sigma$ را فرد نامیم هر گاه بتوان آن را به صورت تعداد فردی ترانهش نوشت.\\
+	\textbf{یادداشت ۳:}
+	تابع علامت، $sgn$، روی $S_n$ را به صورت زیر تعریف می‌کنیم:
+	$$sgn: S_n \rightarrow \{\mp1\}$$
+	$$sgn(\sigma) = \bigg\{ \begin{array}{cc}
+	+1  & \text{زوج باشد} \: \sigma \text{اگر }\\
+	-1  & \text{فرد باشد} \: \sigma \text{اگر}
+	\end{array}$$
+	\textbf{یادداشت ۴:}
+	هر دور فرد، یک جایگشت زوج و هر دور زوج، یک جایگشت فرد است، زیرا:
+	$$(a_1\cdots a_m) = (a_1\quad a_2)(a_2 \quad a_3) \cdots (a_{m-1} \cdots a_m)$$
+	
+	
+	
+	\textbf{رده‌بندی همه‌ی توابع $n$-خطی و alternating روی فضای خطی $V$}
+	
+	با
+	$$\Phi: V \times \cdots \times V \to R $$
+	به‌طوری‌که
+	$$
+	\Phi(a_1,\cdots,a_i,\cdots,a_j,\cdots,a_n) = -\Phi(a_1,\cdots,a_j,\cdots,a_i,\cdots,a_n)
+	$$
+	با استفاده از خاصیت $n$-خطی و alternating بودن $\Phi$ نشان دادیم که
+	$$
+	\Phi(a_1,\cdots,a_n) = \sum_{\sigma \in s_n} a_{1\sigma(1)} \cdots a_{n\sigma(n)}
+	\Phi(e_{\sigma(1)},\cdots,e_{\sigma(n)})
+	$$
+	
+	بنا به قضیه، $\sigma \in s_n$ را می‌توان به صورت دورهای مجزا تجزیه کرد. فرض کنید $\sigma = \sigma_1 \cdots \sigma_s$ (که \textbf{مجزا} هستند) و $\sigma_i$ به ازای $1\leq i \leq s$ را نیز می‌توان به حاصل‌ضرب ترانهش‌ها تجزیه کرد. بنابراین اگر $\sigma(j)=1$، باید اولا $i,j$ دقیقا با هم در یک دور $\sigma_t$ به ازای $1\leq t \leq s$ ظاهر شود (چون دورهای مجزا هستند) و ثانیا، دور $\sigma_t = (a_1,\cdots,a_m)$ باید به تعداد ترانهش‌هایی که در تجزیه‌ی $\sigma_t$ ظاهر می‌شود، جابه‌جا شوند (به ازای هر $1\leq t \leq s$)؛ بنابراین
+	$$
+	\Phi(e_{\sigma(1)} \cdots e_{\sigma(n)}) = sgn(\sigma) \Phi(e_1,\cdots,e_n)
+	\; .$$
+	
+	مثال:
+	$$
+	\Phi(e_4 \; e_2 \; e_1 \; e_3)
+	$$
+	
+	$$
+	\sigma = \begin{bmatrix}
+	1 & 2 & 3 & 4 \\
+	4 & 2 & 1 & 3
+	\end{bmatrix} = (2) (1\; 4\; 3) = 2(1\; 4)(4\; 3)
+	$$
+
+در حاشیه، توجه کنید که برای هر $n$ میان ۱ و ۴ و نیز نامساوی ۲،
+$$ (2) = (2\; n)(n\; 2) \; .$$
+
+بنابراین
+
+$$
+\Phi(a_1,\cdots,a_n) = \sum_{\sigma \in S_n} a_{1\sigma(1)} \cdots a_{n\sigma(n)} sgn(\sigma) \Phi(e_1 \cdots e_n)\; .
+$$
+
+\textbf{قضیه (رده‌بندی)}
+
+اگر $V$ فضای خطی و $B=\{e_1,\cdots,e_n\}$ پایه‌ای برای $V$ باشد، هر تابع $n$-خطی
+$$\Phi: V \times \cdots \times V \to R $$
+که alternating است، با مقدار $\Phi(e_1,\cdots,e_n)$ به طور یکتا مشخص می‌شود؛ به عبارت دقیق‌تر،
+
+$$
+\Phi(a_1,\cdots,a_n) = \sum_{\sigma \in S_n} a_{1\sigma(1)} \cdots a_{n\sigma(n)} sgn(\sigma) \Phi(e_1 \cdots e_n)
+$$
+
+که در آن به ازای هر $i$ از ۱ تا $n$ داریم
+$$
+a_i = \sum_{j_i=1}^n a_{ij_i}e_{j_i}\; .
+$$
+
+یادداشت: در تعریف نگاشت حجم، شرط 
+$ \Phi(e_1 \cdots e_n) = 1$
+نیز در نظر گرفته شد؛ بنابراین
+
+
+$$
+\Phi(a_1,\cdots,a_n) = \sum_{\sigma \in S_n} sgn(\sigma) a_{1\sigma(1)} \cdots a_{n\sigma(n)} \; .
+$$
+
+یادداشت: مختصات بردار $a_i$ به ازای $i$ از ۱ تا $n$ را به عنوان سطر $i$ ام ماتریس $A$ در نظر بگیرید، به عبارت دیگر،
+$$A = \begin{bmatrix}
+A_1 \\
+\vdots \\
+A_n
+\end{bmatrix}
+$$
+
+و
+
+$$ A_i = ([a_i]_B)^T$$
+
+در این صورت، دترمینان $A$ را برابر با مقدار حجم متوازی‌السطوح روی $a_1,\cdots,a_n$ تعریف می‌کنیم:
+
+$$ detA = \sum_{\sigma \in S_n} sgn(\sigma) a_{1\sigma(1)} \cdots a_{n\sigma(n)} $$
+
+یادداشت: چون اعضای $S_n$ هم‌چون $\sigma$، جایگشت روی مجموعه‌ی اعداد ۱ تا $n$ هستند، بنابراین
+$\{a_{1\sigma(1)} \cdots a_{n\sigma(n)}\}$
+در اصل $n$ تا درایه از $n^2$ درایه‌ی $A$ هستند که هیچ دو تایی در یک سطر و یک ستون، مشترک نیستند.
+این مجموعه‌ی $n$ تایی از درایه‌ها، قطر پراکنده نام دارد.
+به وضوح هر ماتریس $A \in M_n(R)$، دارای $n!$ قطر پراکنده است که این تعداد برابر تعداد جایگشت‌ها روی مجموعه‌ی اعداد ۱ تا $n$ نیز است. به عبارت دیگر، به هر قطر پراکنده‌ی $A \in M_n(R)$، می‌توان یک جایگشت در $S_n$ نسبت داد و برعکس:
+
+$$ A = \begin{bmatrix}
+1 & {\color{red} 5} & 7 \\
+8 & 0 & {\color{red} 2} \\
+{\color{red} 3} & 1 & 4
+\end{bmatrix} $$

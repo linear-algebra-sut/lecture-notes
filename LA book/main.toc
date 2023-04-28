@@ -1,0 +1,15 @@
+\contentsline {chapter}{\numberline {1}مقدمه}{5}% 
+\contentsline {section}{\numberline {1.1}کاربردها}{5}% 
+\contentsline {chapter}{\numberline {2} حذف گاوسی}{11}% 
+\contentsline {section}{\numberline {2.1}حل دستگاه‌ها}{11}% 
+\contentsline {section}{\numberline {2.2}تجزیه‌ی LU}{16}% 
+\contentsline {section}{\numberline {2.3}ماتریس وارون}{21}% 
+\contentsline {section}{\numberline {2.4}محاسبه‌ی $A^{-1}$: روش گاوس - ژردان}{22}% 
+\contentsline {section}{\numberline {2.5}خطای گرد کردن}{26}% 
+\contentsline {chapter}{\numberline {3}فضاهای خطی}{29}% 
+\contentsline {section}{\numberline {3.1}فضا‌های خطی}{29}% 
+\contentsline {chapter}{\numberline {4}جبر خطی و گراف‌ها}{53}% 
+\contentsline {chapter}{\numberline {5}جلسه دهم}{59}% 
+\contentsline {chapter}{\numberline {6}ضرب داخلی}{65}% 
+\contentsline {chapter}{\numberline {7}دترمینان}{69}% 
+\contentsline {chapter}{\numberline {8}بردارهای ویژه و مقادیر ویژه}{89}% 

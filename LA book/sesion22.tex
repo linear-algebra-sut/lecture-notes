@@ -1,0 +1,262 @@
+
+\textbf{فضا‌های ویژه و ماتریس‌های قطری}
+
+\textbf{تعریف:}
+ماتریس \textbf{قطری}، ماتریسی مربعی است که به جز درایه‌های روی قطر، باقی درایه‌ها صفر است.
+
+\textbf{تعریف:} ماتریس $A\in M_n(R)$ را \textbf{قطری‌شدنی} گوییم هرگاه ماتریس وارون‌پذیر $S\in M_n(F)$ که $F = R \text{ یا } {C}$ وجود داشته باشد  به طوری که $S^{-1}AS$ ماتریس قطری باشد.
+
+\textbf{مثال:} فرض کنید $A = \begin{bmatrix}
+\frac{1}{2} & \frac{1}{2}\\
+\frac{1}{2} & \frac{1}{2}
+\end{bmatrix}$. ماتریسی بیابید که $A$ را قطری کند. به عبارت دیگر $S$ را به گونه‌ای بیابید که $S^{-1}AS$ قطری باشد.\\
+\textbf{حل:}
+\begin{itemize}
+	\item مقادیر ویژه‌ی $A$ را پیدا می‌کنیم:
+	$$f(\lambda) = det\: (\lambda I -A) = 0 \quad \Rightarrow \quad \lambda = 1 , 0$$
+	\item بردار‌ ویژه‌های متناظر با مقادیر ویژه $A$ را محاسبه می‌کنیم:
+	$$Av_1 = 1v_1 \quad \Rightarrow \quad v_1 = \begin{bmatrix}
+	1\\1
+	\end{bmatrix} \quad , \quad Av_2 = 0 \quad \Rightarrow \quad v_2 = \begin{bmatrix}
+	1\\-1
+	\end{bmatrix}$$
+	\item بردار‌ویژه‌های $v_1$ و $v_2$ مستقل‌اند، زیرا $v_1$ و $v_2$ بر هم عمود بوده و ناصفرند.\\
+	\item ماتریس $S = \begin{bmatrix}
+	v_1 &v_2
+	\end{bmatrix}$ را در نظر بگیرید. $S$ وارون‌پذیر است و $AS = S\begin{bmatrix}
+	1&0\\
+	0&0
+	\end{bmatrix}$. بنابراین:
+	$$S^{-1}AS = \begin{bmatrix}
+	1&0\\
+	0&0
+	\end{bmatrix}$$
+\end{itemize}
+\textbf{مثال:}
+فرض کنید $A =\begin{bmatrix}
+0&-1\\
+1&0
+\end{bmatrix} $.
+آیا $A$ به عنوان ماتریسی در $M_2(R)$ قطری‌شدنی است؟ به عنوان ماتریسی در $M_2(C)$ چطور؟\\
+\textbf{حل:}
+ فرض کنید $S\in M_2(R)$ وجود داشته باشد به طوری که 
+$AS = S\begin{bmatrix}
+d_1 &0\\
+0& d_2
+\end{bmatrix}$. فرض کنید $S = \begin{bmatrix}
+v_1 & v_2
+\end{bmatrix}$. 
+پس :
+$$AS = A\begin{bmatrix}
+v_1 & v_2
+\end{bmatrix} = \begin{bmatrix}
+Av_1 & Av_2
+\end{bmatrix} = \begin{bmatrix}
+v_1 & v_2
+\end{bmatrix}\begin{bmatrix}
+d_1 & 0\\
+0 & d_2
+\end{bmatrix} = \begin{bmatrix}
+d_1v_1 & d_2v_2
+\end{bmatrix}$$
+در نتیجه 
+$Av_1 = d_1v_1$
+و 
+$Av_2 = d_2v_2$.
+چون $S$ وارون‌پذیر است پس 
+$v_1 , v_2 \neq 0$
+بنا به تعریف اعداد حقیقی $d_1$ و $d_2$ مقادیر ویژه‌ی $A$ هستند. یعنی ریشه‌های چند‌جمله‌ای 
+$f(\lambda) = det\: (\lambda I -A)$.
+ از طرفی چند‌جمله‌ای 
+$f(\lambda) = det\: \begin{bmatrix}
+\lambda & 1\\
+-1 & \lambda
+\end{bmatrix} = \lambda^2 +1 $
+ ریشه‌ی حقیقی ندارد. بنابراین فرض وجود $S \in M_2(R)$ باطل است و $A$ به عنوان ماتریسی در $M_2(R)$ قطری‌شدنی نیست. \\
+ریشه‌های چند‌جمله‌ای $\lambda^2+1$ برابر با $\pm i$ است. همچنین اگر 
+$v_1 = \begin{bmatrix}
+1\\ -i
+\end{bmatrix}$
+ و 
+$v_2 = \begin{bmatrix}
+1\\i
+\end{bmatrix}$
+را در نظر بگیرید آنگاه:
+$$Av_1 = iv_1 \quad , \quad Av_2 = -iv_2$$
+همچنین ماتریس $S = \begin{bmatrix}
+1&1\\
+i& -i
+\end{bmatrix}$ وارون‌پذیر است زیرا $det\: S = -2i \neq 0$. بنابراین $S \in M_2(C)$ وارون‌پذیر وجود دارد که $$S^{-1}AS = \begin{bmatrix}
++i & 0\\
+0 & -i
+\end{bmatrix}$$ 
+بنابراین $A$ به عنوان ماتریسی در $M_2(C)$ قطری‌شدنی است. به این معنا که ماتریس وارون‌پذیر $S \in M_2(C)$ وجود دارد به طوری که $S^{-1}AS \in M_2(C)$ و قطری است.\\
+\textbf{یادداشت:} فرض کنید $A \in M_n(F)$ که در آن $F = C \text{ یا } R$.\\
+\textbf{قضیه:} ماتریس $A$ قطری‌شدنی است اگر و تنها اگر $A$، $n$ بردار ویژه‌ی مستقل خطی داشته باشد.\\
+\textbf{برهان:}
+\begin{itemize}
+	\item $\Leftarrow$: فرض کنید $A$ ماتریس قطری‌شدنی باشد. در این صورت ماتریس $S \in M_n(F)$ وجود دارد به طوری که:
+	$$S^{-1}AS = \begin{bmatrix}
+	d_1 &&0\\
+	& \ddots &\\
+	0&&d_n
+	\end{bmatrix}$$
+	ستون‌های $S$ را با $v_1 , \cdots , v_n$ نمایش می‌دهیم. یعنی $S = \begin{bmatrix}
+	v_1 \cdots v_n
+	\end{bmatrix}$. در این صورت:
+	$$AS = A \begin{bmatrix}
+	v_1 \cdots v_n
+	\end{bmatrix} = \begin{bmatrix}
+	Av_1 \cdots Av_n
+	\end{bmatrix} = \begin{bmatrix}
+	d_1v_1 \cdots d_nv_n
+	\end{bmatrix}$$
+	بنابراین به ازای هر $1\leq i \leq n$، $Av_i = d_iv_i$. چون $S$ وارون‌پذیر است، پس $v_i\neq 0$ لذا $d_i$ و $v_i$ به ازای هر $1\leq i \leq n $، مقدار ویژه و بردار ویژه‌ی ماتریس $A$ است. چون $S$ وارون‌پذیر است پس $v_1 , \cdots, v_n$ مستقل خطی هستند.
+	\item فرض کنید $A$، $n$ بردار ویژه‌ی مستقل خطی ، $v_1 , \cdots, v_n$ ، متناظر با مقادیر ویژه‌ی $\lambda_1, \cdots, \lambda_n$ دارد. بنابراین قرار دهید $S = \begin{bmatrix}
+	v_1 \cdots v_n
+	\end{bmatrix}$. در نتیجه:
+	$$S^{-1} AS = \begin{bmatrix}
+	\lambda_1 && 0\\
+	& \ddots &\\
+	0 & & \lambda_n
+	\end{bmatrix}$$
+\end{itemize}
+\textbf{نکته:} فرض کنید مقادیر ویژه‌ی ماتریس $n$ در $n$ $A$ متمایز باشند. در این صورت بردار ویژه‌های متناظر مستقل خطی هستند.\\
+\textbf{برهان خلف:} فرض کنید $v_1 , \cdots , v_k$ بردار ویژه‌های مستقل باشند به طوری که به ازای هر $k+1\leq i \leq n$ $v_i$ بردار وابسته به بردار‌های $v_1 , \cdots , v_k$ باشند به طوری که $k<n$. در این صورت:
+$$v_{k+1} = \sum_{j=1}^k c_j v_j $$ 
+به طوری که حداقل یکی از $c_j$ها $1\leq j \leq k$ ناصفر است. با محاسبه‌ی اثر ماتریس $A$ روی بردار $v_{k+1}$ به دست می‌آيد که:
+
+
+
+
+
+
+
+
+$$ \lambda_{k+1} v_{k+1} = \sum_{j=1}^k c_j \lambda_j v_j \; \; (1)$$
+که در آن،
+$\lambda_j$
+مقدار ویژه‌ی متناظر با بردار ویژه‌ی $v_j$ است. از طرفی،
+$$ \lambda_{k+1} v_{k+1} = \sum_{j=1}^k c_j \lambda_{k+1} v_j \; \; (2)$$
+
+با کم کردن رابطه‌ی (۱) از (۲)، خواهیم داشت:
+$$ 0 = \sum_{j=1}^k c_j (\lambda_{k+1}-\lambda_{j}) v_j$$
+بنا به فرض، حداقل یکی از $c_j$ ها (مثلا $c_j^*$) ناصفر است. چون $v_1$ تا $v_k$ مستقل خطی شدند،
+$0=\lambda_{k+1}-\lambda_{j^*} \; \; (0 \leq j^* \leq k)$
+که در تناقض با متمایز بودن $\lambda_1$ تا $\lambda_n$ است؛ بنابراین، فرض وابسته بودن $v_i$ ها باطل بوده و بردارهای ویژه، مستقل خطی‌اند.
+
+\textbf{نکته‌ی ۲: }
+همه‌ی ماتریس‌ها، قطری‌شدنی نیستند.
+
+\textbf{مثال: }
+فرض کنید
+$A=\begin{bmatrix}
+0 & 1 \\
+0 & 0
+\end{bmatrix}$.
+بنابراین،
+$f(x)=det(xI-A)=x^2$
+و در نتیجه مقدار ویژه‌ی $A$ برابر $\lambda = 0$ با تکرار ۲ است. بردار ویژه‌ی متناظر با آن، این‌گونه به دست می‌آید:
+$$ Ax = 0 \to \begin{bmatrix}
+0 & 1 \\
+0 & 0
+\end{bmatrix} \begin{bmatrix}
+x_1 \\
+x_2
+\end{bmatrix}=\begin{bmatrix}
+x_2 \\
+0
+\end{bmatrix} \to x_2=0 $$
+بنابراین، فضای ویژه‌ی مربوط به بردار ویژه‌ی آن، یعنی
+$W=\{v \in R^2 | v=0\}$
+فضایی یک‌بعدی است، لذا $A$ دو بردار ویژه‌ی مستقل ندارد و در نتیجه، بنا به قضیه، قطری‌شدنی نیست.
+
+\textbf{نکته‌ی ۳: }
+اگر ماتریس $A$ قطری‌شدنی باشد، آن‌گاه ماتریس $S$ که $S^{-1}AS$ قطری است، یکتا نیست.
+
+\textbf{تعریف: }
+فرض کنید $T$ تبدیل خطی روی فضای $\sigma$ با بعد متناهی باشد. گوییم $T$ قطری‌شدنی است اگر وجود داشته باشد پایه‌ای مانند $‌B$ برای $V$ به طوری‌که ماتریس نمایش $T$ در پایه‌ی $B$ که با $[T]_B$ نمایش می‌دهیم، قطری باشد.
+
+\textbf{یادداشت ۱: }
+فرض کنید $T$ تبدیل خطی قطری‌شدنی باشد و
+$B=\{v_1,\cdots,v_n\}$
+پایه‌ی مورد نظر باشد، یعنی:
+$$[T]_B = \begin{bmatrix}
+d_1 & \cdots & 0 \\
+\vdots & \vdots & \vdots \\
+0 & \cdots & d_n \\
+\end{bmatrix}$$
+
+بنابراین، به ازای هر $1\leq i \leq n$ داریم
+$T(v_i)=d_iv_i$،
+یعنی ستون $i$ ام ماتریس $[T]_B$ مختصات $T(v_i)$ در پایه‌ی $B$ است. در نتیجه، $d_1$ تا $d_n$ مقادیر ویژه‌ی $T$ بوده و  $v_1$ تا $v_n$ بردارهای ویژه‌ی متناظرشان هستند.
+
+با تعویض عناصر پایه، می‌توان مقادیر ویژه را برحسب تکررشان، مرتب نمود و فرض کرد که $d_1$ تا $d_k$ برابر $k$ تا مقدار ویژه‌ی مجزا با تکرارهای به ترتیب $n_1$ تا $n_k$ اند، بنابراین:‌
+
+$$[T]_{B'} = \begin{bmatrix}
+{\begin{bmatrix}
+d_1 & \cdots & 0 \\
+\vdots & \vdots & \vdots \\
+0 & \cdots & d_1 \\
+\end{bmatrix}} & \cdots & 0 \\
+\vdots & \vdots & \vdots \\
+0 & \cdots & {\begin{bmatrix}
+	d_k & \cdots & 0 \\
+	\vdots & \vdots & \vdots \\
+	0 & \cdots & d_k \\
+	\end{bmatrix}} \\
+\end{bmatrix} =
+\begin{bmatrix}
+d_1I_{n1} & \cdots & 0 \\
+\vdots & \vdots & \vdots \\
+0 & \cdots & d_kI_{nk} \\
+\end{bmatrix}$$
+
+در نتیجه، چندجمله‌ای ویژه‌ی تبدیل خطی $T$ برابر است با:
+
+$$ f(x)=det(xI-[T]_{B'}) = $$
+$$ det \begin{bmatrix}
+xI_{n1}-d_1I_{n1} & \cdots & 0 \\
+\vdots & \vdots & \vdots \\
+0 & \cdots & xI_{nk}-d_kI_{nk} \\
+\end{bmatrix} = (x-d_1)^{n_1} + \cdots + (x-d_k)^{n_k} $$
+
+به ازای هر $i$ از ۱ تا $k$ فضای ویژه‌ی مربوط به مقدار ویژه‌ی $d_i$ برابر است با
+$W_i = N(d_iI-T)$
+و بنابراین:
+$$dimW_i = dimN(\begin{bmatrix}
+d_iI-d_1I & \cdots & 0 \\
+\vdots & \vdots & \vdots \\
+\vdots & d_iI-d_iI=0 & \vdots \\
+\vdots & \vdots & \vdots \\
+0 & \cdots & d_iI-d_kI \\
+\end{bmatrix})$$
+
+چون $d_i$ ها مقادیر ویژه‌ی متمایزی هستند، پس بنا به قضیه‌ی رتبه، $dimW_i=n_i$ است.
+
+یادداشت فوق، کم و بیش، قضیه‌ی زیر را به دنبال خواهد داشت:
+
+\textbf{قضیه: }
+فرض کنید $T$ تبدیل خطی روی فضای با بعد متناهی $V$ است، مقادیر ویژه‌ی متمایز $T$ برابر $\lambda_1$ تا $\lambda_k$ اند و $W_i$ فضای پوچ $T-\lambda_iI$، فضای ویژه‌ی مربوط به مقدار ویژه‌ی $\lambda_i$، به ازای $1\leq i \leq k$ است؛ در این صورت، گزاره‌های زیر معادل‌اند:
+
+\begin{itemize}
+	\item
+	ماتریس $T$ قطری‌شدنی است.
+	\item
+	چندجمله‌ای ویژه‌ی $T$ برابر است با:
+	$$f(x)=(x-\lambda_1)^{n_1} \cdots (x-\lambda_k)^{n_k} $$
+	که در آن،
+	$dim W_i = n_i$
+	به ازای $i$ از ۱ تا $k$.
+	\item 
+	$\sum_{i=1}^k dimW_i = dimV \; .$
+	
+\end{itemize}
+
+
+
+
+
+
+
+

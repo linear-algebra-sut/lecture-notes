@@ -1,0 +1,212 @@
+
+دترمینان خاصیت‌های زیر را داراست:
+\begin{itemize}
+	\item جا‌به‌جایی دو سطر $A$ علامت دترمینان را تغییر می‌دهد.
+	\item $det\: I = 1$ که در آن $I$ ماتریس همانی است.
+	\item دترمینان تابعی $n$ - خطی نسبت به هر سطر است.
+	\item اگر ماتریس $A$ دو سطر یکسان داشته باشد، آنگاه $det\: A = 0$.
+	\item کم کردن ضریب یک سطر از سطر دیگر، مقدار دترمینان را تغییر نمی‌دهد. فرض کنید ${A = \begin{bmatrix}
+		A_1 \\ \vdots \\ A_n
+		\end{bmatrix}}$.
+	بنابراین:
+	$$det\: A = \Phi (A_1,\cdots , A_n)$$
+	$$\Phi(A_1, \cdots,A_i - cA_j,A_{i+1}, \cdots , A_j , \cdots , A_n)$$
+	$$= \Phi (A_1,\cdots, A_i, A_{i+1}, \cdots , A_j, \cdots,A_n) - c \underbrace{\Phi (A_1, \cdots, A_j, A_{i+1} , \cdots ,A_j,\cdots, A_n}_{0} $$
+	$$= \Phi (A_1,\cdots,A_n) = det\: A$$
+	\item اگر یکی از سطر‌های $A$ صفر باشد، $det\: A = 0$. زیرا:
+	$$det\: A = \sum_{\sigma\in S_n} sgn (\sigma) a_{1\sigma(1)}\cdots a_{n\sigma(n)} = 0$$
+	بنابراین همواره در قطر پراکنده‌ی معادل $\sigma$ یک صفر ظاهر می‌شود.
+	\item اگر $A$ ماتریسی مثلثی باشد، آنگاه:
+	$$det\: A = a_{11} \cdots a_{nn}$$
+	زیرا در هر جایگشتی به غیر از جایگشت همانی، عنصری از زیر قطر اصلی ظاهر می‌شود که اگر $A$ بالامثلثی باشد، آن‌گاه جمله‌ی متناظر با $\sigma$ - یعنی
+	$a_{1\sigma(1)} \cdots a_{n\sigma(n))} $
+	برابر صفر خواهد بود.
+	\item اگر $A$ تکین باشد، آنگاه $det\: A = 0$.
+	فرض کنید $A$ تکین است. پس سطر‌های $A$ وابسته‌ی خطی هستند. یعنی اگر $A = \begin{bmatrix}
+	A_1\\\vdots \\ A_n
+	\end{bmatrix}$، آنگاه ترکیب خطی از $A_1, \cdots , A_n$ مانند ${c_1A_1+ \cdots+ c_nA_n = 0}$ وجود دارد به طوری که حداقل یکی از $c_i$ ها ناصفر است. فرض کنید $c_i\neq 0$. بنابراین:
+	$$A_i = -(\frac{c_1}{c_i}A_1 + \cdots+ \frac{c_{i-1}}{c_i}A_{i-1}+ \frac{c_{i+1}}{c_i}A_{i+1}+ \cdots+ \frac{c_n}{c_i}A_n)$$
+	از آنجایی که $det$ تابعی $n$ - خطی نسبت به سطر‌ها است، پس:
+	$$det\: A = \sum_{{j=1 ,j\neq i}}^n \frac{-c_j}{c_i} det \begin{bmatrix}
+	A_1\\ \vdots \\ A_j \\ \vdots \\ A_j\\ \vdots \\ A_n 
+	\end{bmatrix}= 0$$
+	بنابراین اگر $A$ تکین باشد، آنگاه $det\: A = 0$. پس اگر $det\:A \neq 0$ آنگاه $A$ وارون‌پذیر است.
+	\item $det\: A = det\: A^T$\\
+	هر جمله‌ی $sgn(\sigma) a_{1\sigma(1)}\cdots a_{n\sigma(n)}$ در $det\: A$ معادل $sgn(\sigma^{-1})a_{1\sigma^{-1}(1)} \cdots a_{n\sigma^{-1}(n)}$ در $det\: A^T$ است. به عبارت دیگر اگر $\sigma(i)=j$، آنگاه $i = \sigma^{-1}(j)$:
+	$$det\: A^T = \sum_{\sigma\in S_n} sgn(\sigma^{-1})a_{1\sigma^{-1}(1)} \cdots a_{n\sigma^{-1}(n)} $$
+	جای سطر و ستون عوض شد. اگر ثابت کنیم $sgn(\sigma) = sgn(\sigma^{-1})$، اثبات کامل می‌شود. فرض کنید $\sigma = \tau_1 \cdots \tau_m$ که در آن $\tau_i$ ترانهش است. بنابراین $\sigma^{-1}= \tau_m^{-1}\cdots \tau_1^{-1}$ و $sgn(\sigma) = sgn(\sigma^{-1})$.
+	\item فرض کنید $A , B \in M_n(R)$. در این صورت:
+	$$det\: AB = (det\: A)(det\:B)$$
+	\textbf{برهان:} با فرض اینکه سطر‌های $A$ با $a_1,\cdots,a_n$ نمایش داده شده، تابع $\Phi$ را تعریف می‌کنیم:
+	$$\Phi: V \times\cdots\times V \rightarrow R$$
+	$$\Phi (a_1\cdots a_n) = det\: AB$$
+	ابتدا، نشان می‌دهیم تابع $\Phi$ $n$ - خطی است.\\
+	به ازای ماتریس $A = \begin{bmatrix}
+	a_1 \\ \vdots \\ a_n
+	\end{bmatrix}$:
+	$$det\: AB = det\: \left( \begin{bmatrix}
+	a_1 \\ \vdots \\ a_i \\ a_{i+1}\\ \vdots \\ a_n
+	\end{bmatrix}B\right) = det \: \begin{bmatrix}
+	a_1B\\ \vdots \\ a_iB\\ a_{i+1}B \\ \vdots \\ a_nB
+	\end{bmatrix}$$
+	بنابراین چون $det$ تابع $n$ - خطی است،
+	$$det\: \begin{bmatrix}
+	a_1B \\ \vdots \\ (ca_i+ a_i^\prime)B \\ a_{i+1}B\\ \vdots \\ a_nB
+	\end{bmatrix} = cdet\: \begin{bmatrix}
+	a_1B \\ \vdots \\ a_iB \\ a_{i+1}B\\ \vdots \\ a_nB
+	\end{bmatrix}+ det\: \begin{bmatrix}
+	a_1B \\ \vdots \\ a_i^\prime B \\ a_{i+1}B\\ \vdots \\ a_nB
+	\end{bmatrix}$$
+	پس تابع $\Phi$ $n$ - خطی است.\\
+	هم‌چنین، تابع $\Phi$ متناوب ($alternative$) است، زیرا فرض کنید $a_i = a_j = a$.
+	$$\Phi(a_1, \cdots, a_i, \cdots, a_j, \cdots a_n) = det\: \begin{bmatrix}
+	a_1B \\ \vdots \\ aB \\ \vdots \\ aB\\ \vdots \\ a_nB
+	\end{bmatrix} = 0$$
+	چرا که $det$ یک تابع متناوب است. بنا به قضیه‌ی رده‌بندی توابع $n$ - خطی و $alternating$:
+	$$\Phi (a_1,\cdots,a_n) = \sum_{\sigma\in S_n} sgn(\sigma) a_{1\sigma(1)} \cdots a_{n\sigma(n)}\Phi (e_1,\cdots,e_n)= (det\: A) \Phi (e_1,\cdots, e_n)$$
+	از طرفی:
+	$$\Phi(e_1,\cdots, e_n) = det\: B$$
+	پس:
+	$$\Phi ( a_1,\cdots,a_n) = (det\:A)(det\:B) \quad \Rightarrow \quad det\: AB = (det\:A)(det\:B)$$
+	\item اگر $A$ وارون‌پذیر باشد، آنگاه $det\: A\neq 0$.
+	$$A \text{وارون‌پذیر}\quad \Rightarrow\quad AA^{-1}= I \quad\Rightarrow\quad (det\:A)(det\:A^{-1}) = 1\quad\Rightarrow\quad det\:A \neq 0$$
+	
+\end{itemize}
+\textbf{خاصیت ۱۲:}
+فرض کنید $A\in M_r(R)$ و $C\in M_s(R)$ و $B\in M_{rs}(R)$؛ در این صورت
+
+$$ det \begin{bmatrix}
+A & B \\
+0 & C
+\end{bmatrix} = (detA)(detC) $$
+
+\textbf{برهان:}
+ماتریس‌های $A$ و $B$ را دو ماتریس ثابت فرض کنید و قرار دهید $V=R^s$ و نگاشت زیر را تعریف کنید:
+
+$$ \Phi: V\times \cdots \times V \to R$$
+$$ \to \Phi(c_1,\cdots, c_s) = \begin{bmatrix}
+A & B \\
+0 & C
+\end{bmatrix} $$
+
+که در آن، سطر $i$ ام $C$ برابر $c_i$است. $\Phi$ نگاشتی $s$-خطی و alternating است (چرا؟)، بنابراین بنا به رده‌بندی این دسته از نگاشت‌های خطی،
+
+$$ \Phi(c_1,\cdots, c_s) = det C \Phi(e_1,\cdots, e_s) $$
+$$ \Phi(e_1,\cdots, e_s) = det \begin{bmatrix}
+A & B \\
+0 & I
+\end{bmatrix}= det \begin{bmatrix}
+A & 0 \\
+0 & I
+\end{bmatrix} $$
+زیرا عملیات سطری، دترمینان را تغییر نمی‌دهد.
+
+با استفاده از تعریف دترمینان (در نظر گرفتن قطر پراکنده)، به‌دست می‌آوریم که
+$$det \begin{bmatrix}
+A & 0 \\
+0 & I
+\end{bmatrix} = det A $$
+بنابراین
+$$ \Phi(c_1,\cdots,c_s) = det \begin{bmatrix}
+A & B \\
+0 & C
+\end{bmatrix} = (detC)(detA) $$
+
+\textbf{خاصیت ۱۳:}
+فرض کنید
+$ A,B,C,D \in M_n(R) $
+به طوری‌که $CD=DC$؛ در این صورت،
+$$det \begin{bmatrix}
+	A & B \\
+	C & D
+\end{bmatrix} = det(AD-BC) $$
+\textbf{برهان:}
+\begin{itemize}
+	\item
+	حالت اول - فرض کنید که $D$ وارون‌پذیر است:
+	$$ \begin{bmatrix}
+	A & B \\
+	C & D
+	\end{bmatrix}\begin{bmatrix}
+	I & 0 \\
+	-D^{-1}C & I
+	\end{bmatrix}=\begin{bmatrix}
+	A-BD^{-1} & B \\
+	0 & D
+	\end{bmatrix} $$
+	در نتیجه
+	$$ det \begin{bmatrix}
+	A & B \\
+	C & D
+	\end{bmatrix} det\begin{bmatrix}
+	I & 0 \\
+	-D^{-1}C & I
+	\end{bmatrix}=det \begin{bmatrix}
+	A-BD^{-1}C & B \\
+	0 & D
+	\end{bmatrix} $$
+	
+	$$ \to det \begin{bmatrix}
+	A & B \\
+	C & D
+	\end{bmatrix} (detI)^2 = (det(A-BD^{-1}C))(detD) $$
+	
+	بنابراین،
+	$$ det \begin{bmatrix}
+	A & B \\
+	C & D
+	\end{bmatrix} = det(AD-BD^{-1}CD), \; CD = DC$$
+	
+		بنابراین اگر $D$ وارون‌پذیر باشد،
+	
+	$$ det \begin{bmatrix}
+	A & B \\
+	C & D
+	\end{bmatrix} = det(AD-BC) $$
+	
+\item
+حالت دوم - فرض کنید که $D$ دل‌خواه است. ماتریس $D+xI$ را در نظر بگیرید.
+
+$$ det(D+xI) = det \begin{bmatrix}
+d_{11} + x & d_{12} & \cdots & d_{1n} \\
+d_{21} & d_{22} + x & \cdots & d_{2n} \\
+\vdots & \vdots & \vdots & \vdots \\
+d_{n1} & d_{n2} & \cdots & d_{nn} + x
+\end{bmatrix} $$
+
+با استفاده از تعریف دترمینان، $det(D+xI)$ یک چندجمله‌ای از درجه‌ی $n$ بر حسب $x$ است که ضریب $x^n$در آن، یک است، زیرا تنها قطر پراکنده‌ای که $x^n$ را می‌سازد، قطر اصلی است:
+$$ det(D+xI) = x^n + \alpha_{n-1} x^{n-1} +\cdots + \alpha_1 x + \alpha_0 $$
+
+که در آن $a_i$ ها، اعداد حقیقی هستند.
+
+می‌دانیم که هر چندجمله‌ای از درجه‌ی $n$، حداکثر $n$ ریشه دارد. فرض کنید $S$ مجموعه‌ی ریشه‌های آن باشد؛ در این صورت، به ازای هر $x\in S$ (یعنی هر $x$ که ریشه‌ی چندجمله‌ای فوق باشد)، $det(D+xI)\neq 0$، یعنی به ازای هر 
+$x \in R \setminus S$
+ماتریس $D+xI$ وارون‌پذیر است؛ از طرفی،
+$(D+xI)C = C(D+xI) $
+و در نتیجه،
+$$ det \begin{bmatrix}
+A & B \\
+C & D+xI
+\end{bmatrix} = det(A(D+xI)-BC)$$
+
+قرار دهید:
+
+$$ f(x) = det \begin{bmatrix}
+A & B \\
+C & D+xI
+\end{bmatrix} = det(A(D+xI)-BC) $$
+
+آن‌گاه، $f(x)$ چندجمله‌ای درجه‌ی $n$ است که به ازای هر $x \in R \setminus S$ داریم $f(x)=0$؛ پس چندجمله‌ای $f$ باید چندجمله‌ای صفر باشد، زیرا نامتناهی ریشه دارد. از $f(x)=0$ به دست می‌آید که به ازای هر $x\in R$،
+	
+	$$ det \begin{bmatrix}
+	A & B \\
+	C & D+xI
+	\end{bmatrix} = det(A(D+xI)-BC) $$
+	
+	بنابراین به ازای $x=0$،
+	$$ det \begin{bmatrix}
+	A & B \\
+	C & D
+	\end{bmatrix} = det(AD-BC) $$
+	
+\end{itemize}

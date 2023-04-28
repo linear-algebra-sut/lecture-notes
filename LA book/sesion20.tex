@@ -1,0 +1,249 @@
+
+\textbf{بسط دترمینان نسبت به ستون}\\
+\textbf{گزاره:} فرض کنید $A$ ماتریسی $n\times n$ است، در این صورت:
+$$det\: A = \sum_{i=1}^n (-1)^{i+j}a_{ij}det\: A(i|j)$$
+\textbf{برهان:} تابع $\Phi: R^n\time\cdot\times R^n $ با ضابطه‌ی $\Phi (a_1,\cdots, a_n) = \sum_{i=1}^n (-1)^{i+j}a_{ij}det\: A(i|j)$ را در نظر بگیرید. تابع $\Phi$ ، $n$ - خطی و متناوب است. لذا بنا به قضیه‌ی رده‌بندی:
+$$\Phi(a_1,\cdots,a_n)= (det\: A)\Phi(e_1,\cdots,e_n)$$
+از طرفی $\Phi(e_1,\cdots,e_n)=1$، لذا حکم ثابت می‌شود.\\
+\textbf{اثبات شهودی:}
+$$det\: A = \sum_{\sigma\in S_n} sgn(\sigma) a_{1\sigma(1)}\cdots a_{n\sigma(n)}$$
+حال جملات ظاهر‌شده در در جمع فوق را بر حسب درایه‌های ستون $j$ام مرتب می‌کنیم:
+$$det\: A = \beta_{i1}a_{i1} + \cdots + \beta_{ij}a_{ij} + \cdots + \beta_{in}a_{in}$$
+و نشان می‌دهیم که $\beta_{ij} = (-1)^{i+j}det\: A(i|j)$. در رابطه‌ی اول در بخش اثبات شهودی $\beta_{ij}a_{ij}$ جمع روی همه‌ی قطر پراکنده‌هایی است که از سطر $i$ام $a_{ij}$ انتخاب شده است. به عبارت دیگر $\sigma_i = j$ به ازای $\sigma\in S_n$. بقیه‌ی عناصر قطر پراکنده نیز از درایه‌های ماتریس $A(i|j)$ انتخاب می‌شود. با توجه به اینکه $det\: A = det\: A^T$ و خاصیت متناوب بودن دترمینان، با جا‌به‌جایی $a_{ij}$ و انتقال آن به $a_{11}$، دترمینان در $(-1)^{(i-1)(j-1)}$ ضرب خواهد شد. زیرا $j-1$ و $i-1$ جا‌به‌جایی ستونی و سطری لازم است. پس:
+$$\beta_{ij} = (-1)^{i+j}det\: A(i|j)$$
+\textbf{تعریف:}
+قرار دهید $c_{ij} = (-1)^{i+j}det\: A(i|j)$ و $c_{ij}$ را همساز $ij$ام ماتریس $A$ گویند.\\
+\textbf{یادداشت:}
+بنا به تعریف:
+$$det\:A = \sum_{i=1}^n a_{ij}c_{ij}$$
+به عبارت دیگر اگر قرار دهید $C= \begin{bmatrix}
+c_{11}&\cdots&c_{ij}&\cdots&c_{1n}\\
+\vdots &&\vdots&&\vdots\\
+c_{n1} &\cdots &c_{nj}&\cdots&c_{nn}
+\end{bmatrix}$ در این صورت $det\: A$ ضرب داخلی ستون $j$ام $A$ در ستون $j$ام $C$ است.
+
+
+\textbf{یادداشت:} ادعا می‌کنیم اگر $k\neq j$ آنگاه $\sum_{i=1}^n a_{ik}c_{ij} = 0$.\\
+برای اثبات، ماتریس $B$ را چنان بسازید که $B$
+همان ماتریس $A$ است که ستون $j$ام آن، ستون $k$ام $A$ تکرار شده است. بنابراین $det\:B = 0$. از طرفی $det\:B = \sum_{i=1}^n a_{ik}c_{ij}$. بنابراین $\sum_{i=1}^n a_{ik}c_{ij} = 0$ به ازای $j\neq k$. ماتریس $B$ به ازای $k<j$:
+$$B = \begin{bmatrix}
+a_{11}&\cdots&a_{1k}&\cdots & a_{1k} & \cdots &a_{1n}\\
+\vdots && \vdots &&\vdots && \vdots\\
+a_{n1} & \cdots & a_{nk} & \cdots & \underbrace{a_{nk}}_{\text{ام}j\text{ستون}} & \cdots & a_{nn}
+\end{bmatrix}$$
+در نتیجه:
+$$C^TA = \begin{bmatrix}
+c_{11}&\cdots&c_{n1}\\
+c_{12}& \cdots & c_{n2}\\
+\vdots && \vdots\\
+c_{1n}& \cdots & c_{nn}
+\end{bmatrix}\begin{bmatrix}
+a_{11}&\cdots&a_{n1}\\
+a_{21}& \cdots & a_{2n}\\
+\vdots && \vdots\\
+a_{n1}& \cdots & a_{nn}
+\end{bmatrix} = \begin{bmatrix}
+det\: A && 0 \\
+& \ddots &\\
+0 && det\: A
+\end{bmatrix} = (det\:A )I  $$
+\textbf{تعریف:} ماتریس $C^T$ را ماتریس الحاقی کلاسیک ماتریس $A$ گویند و با نماد $adj\: A$ نمایش می‌دهند. پس $(adj\: A)A = (det\:A)I$.
+
+\textbf{خواص:}
+\begin{itemize}
+	\item $(adj\: A)^T = adj\: A^T$. زیرا:
+	$$(adj\: A^T)_{ij} = (-1)^{i+j} det\:A^T(j|i) = (-1)^{i+j}det\: A(i|j) = (adj\: A)_{ji}= (adj\: A)_{ij}^T$$
+	\item $(adj\: A)A = A(adj\: A)$. زیرا از رابطه‌ی ${(adj\:A)A = (det\:A)I}$ داریم: $${A^T(adj\:A)^T = (det\:A) I}$$
+	پس:
+	$$A^Tadj\:A^T = (det\:A)I$$
+	از طرفی 
+	$$(adj\: A^T) = (det\: A)I$$
+	پس:
+	$$(adj\: A^T)A^T = A^T(adj\: A^T)$$
+	کافی است قرار دهید $B = A^T$ و به دست می‌آید:
+	$$(adj\:A^T) = A(adj\: A)$$
+	\item اگر $A$ وارون‌پذیر باشد آنگاه:
+	$$A(\frac{adj\: A}{det\: A}) = (\frac{adj\:A}{det\: A})A = I \quad \Rightarrow \quad A^{-1} = (\frac{adj\:A}{det\: A})$$
+\end{itemize}
+\textbf{قاعده‌ی کرامر برای حل دستگاه خطی $Ax = b$}\\
+فرض کنید $A\in M_n(R)$ ماتریس وارون‌پذیر باشد. می‌خواهیم دستگاه $Ax=b$ را حل کنیم.
+$$Ax = b \quad \Rightarrow \quad (adj\:A)Ax = (adj\:A)b \quad\Rightarrow\quad (det\:A)x = (adj\: A)b$$
+$$\Rightarrow\quad (det\:A)x_j = \sum_{i=1}^n(-1)^{i+j}det\:(A(i|j))b_i$$
+بنابراین اگر $B_j$ ماتریسی $n\times n$ باشد که از قرار دادن $b$ به جای ستون $j$ام ماتریس $A$ به دست آمده باشد:
+$$B_j = \begin{bmatrix}
+a_{11} &\cdots&b_1 & \cdots& a_{1n}\\
+\vdots && \vdots&& \vdots\\
+a_{n1} & \cdots & b_n & \cdots & a_{nn}
+\end{bmatrix}$$
+در صورت بسط دترمینان $B_j$ نسبت به ستون $j$ام داریم:
+$$det\: B_j = \sum_{i=1}^n (-1)^{i+j}det\:(A(i|j)b_i)$$
+در نتیجه به ازای هر $j$، $1\leq j \leq n$، داریم:
+$$x_j = \frac{det\: B_j}{det\: A}$$
+که به عبارت بالا، قاعده‌ی کرامر گویند.\\
+\textbf{یادداشت:} فرض کنید $V$ یک فضا‌ی خطی با بعد متناهی و $T: V \rightarrow V$ تبدیل خطی است. مجموعه‌ی $B$ را پایه‌ای برای $V$ در نظر بگیرید. در این صورت دترمینان $T$ را با نماد $det\:T$ نمایش می‌دهیم و تعریف می‌کنیم:
+$$det\: T = det\: [T]_B$$
+توجه کنید که $det\:T$ مستقل از پایه‌ی $B$ است. زیرا فرض کنید $B^\prime$ پایه‌ی دیگری برای $V$ باشد، در این صورت ماتریس وارون‌پذیر $P$ وجود دارد به طوری که $[T]_B = P[T]_BP^{-1}$. در نتیجه:
+$$det\: [T]_B = (det\: P)(det\: [T]_{B^\prime})(det\: P^{-1})$$
+پس:
+$$det\: [T]_B = det\: [T]_{B^\prime}$$
+
+\chapter{بردارهای ویژه و مقادیر ویژه}
+
+\textbf{مقدمه}
+
+فرض کنید دستگاه معادلات دیفرانسیل زیر با مقادیر اولیه‌ی $u_1(0)=8$ و $u_2(0)=5$ داده شده است.
+
+$$ \frac{du_1(t)}{dt} = 4u_1(t)-5u_2(t) $$
+$$ \frac{du_2(t)}{dt} = 2u_1(t)-3u_2(t) $$
+
+به یاد دارید که جواب معادله‌ی
+$ \frac{du}{dt} = au(t) $
+به ازای $u(0)=u_0$ برابر با $u(t)=e^{at}u(0)$ است. با پیروی از جواب معادله‌ی تک‌مجهولی، حدس می‌زنیم که $u(t)=ae^{\lambda t}$ که
+$a=\begin{bmatrix}
+a_1 \\
+a_2
+\end{bmatrix}$
+باید جواب دستگاه فوق باشد، یعنی
+
+$$ \lambda e^{\lambda t} a_1 = 4 e^{\lambda t} a_1 - 5 e^{\lambda t} a_2 $$
+$$ \lambda e^{\lambda t} a_2 = 2 e^{\lambda t} a_1 - 3 e^{\lambda t} a_2 $$
+
+بنابراین بایستی $a$ و $\lambda$ را به گونه‌ای بیابیم که
+
+$$ \lambda  a_1 = 4  a_1 - 5 a_2 $$
+$$ \lambda a_2 = 2  a_1 - 3 a_2 $$
+
+و در نتیجه
+
+$$ \begin{bmatrix}
+4 & -5 \\
+2 & -3
+\end{bmatrix}
+\begin{bmatrix}
+a_1 \\
+a_2
+\end{bmatrix}
+=
+A
+\begin{bmatrix}
+a_1 \\
+a_2
+\end{bmatrix}
+=
+\lambda
+\begin{bmatrix}
+a_1 \\
+a_2
+\end{bmatrix} $$
+
+به عبارت دیگر، در صورتی‌که بتوان $\lambda$ و بردار $a$ را به‌گونه‌ای یافت که $Aa=\lambda a$، آن‌گاه
+$u(t)=ae^{\lambda t}$
+جواب دستگاه اولیه خواهد بود. بردار $a$ خاصیت ویژه‌ای دارد: راستای این بردار، تحت $A$ حفظ می‌شود؛ به عبارت دیگر،
+$$(A-\lambda I)a=0$$
+بنابراین، اگر دنبال بردار ناصفری مانند $a$ هستیم که تحت $A$ راستای آن حفظ شود، باید
+$N(A-\lambda I)\neq \{0\}$
+و به عبارت دیگر، باید $\lambda$ را به گونه‌ای بیابیم که فضای پوچ
+$A-\lambda I$
+نابدیهی باشد، یعنی باید
+$A-\lambda I$
+تکین باشد، معادلا:
+$$det(A-\lambda I)=0$$
+
+در مثال فوق،
+
+$$A-\lambda I = \begin{bmatrix}
+4-\lambda & -5 \\
+2 & -3-\lambda
+\end{bmatrix} $$
+
+$$det(A-\lambda I) = (4-\lambda)(-3-\lambda)+10 = \lambda^2 -\lambda - 2 = 0$$
+
+$$ \to \lambda_1 = 2 \; , \; \; \lambda_2 = -1 $$
+
+$$ \lambda = -1 \to (A-\lambda I)a = \begin{bmatrix}
+5 & -5 \\
+2 & -2
+\end{bmatrix}
+\begin{bmatrix}
+a_1 \\
+a_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+0
+\end{bmatrix} \to a = \begin{bmatrix}
+a_1 \\
+a_2
+\end{bmatrix} =
+\begin{bmatrix}
+1 \\
+1
+\end{bmatrix} $$
+$$ \to u(t) = e^{-t} \begin{bmatrix}
+1 \\
+1
+\end{bmatrix} \; \; (2)$$
+
+
+$$ \lambda = 2 \to (A-\lambda I)a = \begin{bmatrix}
+2 & -5 \\
+2 & -5
+\end{bmatrix}
+\begin{bmatrix}
+a_1 \\
+a_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+0
+\end{bmatrix} \to a = \begin{bmatrix}
+a_1 \\
+a_2
+\end{bmatrix} =
+\begin{bmatrix}
+5 \\
+2
+\end{bmatrix} $$
+$$ \to u(t) = e^{2t} \begin{bmatrix}
+5 \\
+2
+\end{bmatrix}  \; \; (1)$$
+
+جواب‌های (۱) و (۲) جواب‌های خاص معادله‌ی دیفرانسیل هستند، بنابراین مجموعه جواب عمومی معادله‌ی دیفرانسیل فوق، عبارت است از:
+
+$$ \{ u(t) = c_1 e^{-t} \begin{bmatrix}
+1 \\
+1
+\end{bmatrix} + c_2 e^{2t} \begin{bmatrix}
+5 \\
+2
+\end{bmatrix} \Biggr| c_1 \in R \; , \; \; c_2 \in R \} $$
+
+پس جواب معادله‌ی دیفرانسیل، تحت شرایط اولیه‌ی داده شده، عبارت است از:
+
+$$ u(t) = 3 e^{-t} \begin{bmatrix}
+1 \\
+1
+\end{bmatrix} + e^{2t} \begin{bmatrix}
+5 \\
+2
+\end{bmatrix} $$
+
+زیرا، با لحاظ کردن شرایط اولیه‌ی $u_1(0)=8$ و $u_2(0)=5$ خواهیم داشت:
+
+$$ \begin{bmatrix}
+1 & 5 \\
+1 & 2
+\end{bmatrix}
+\begin{bmatrix}
+c_1 \\
+c_2
+\end{bmatrix} =
+\begin{bmatrix}
+8 \\
+5 
+\end{bmatrix} \to c_1 = 3 \; , \; \; c_2 = 1 $$
+
+

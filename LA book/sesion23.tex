@@ -1,0 +1,189 @@
+%\chapter{جلسه‌ی بیست‌و‌سوم}
+
+\textbf{لم:} فرض کنید $T$ تبدیل خطی روی $v$ است و $Tv = \lambda v$. اگر $f(x)$ یک چند‌جمله‌ای باشد، آنگاه $$f(T)v = f(\lambda)v\;.$$\\
+\textbf{برهان:} فرض کنید $f(x) = \sum_{i=0}^{m} a_ix^i$. از طرفی:
+$$T^2(v) = T(Tv) = T(\lambda v) = \lambda T(v) =\lambda^2v$$
+$$T^3(v) = T(T^2v) = T(\lambda^2v) = \lambda^3v$$
+$$\vdots$$
+$$T^n(v) = T(T^{n-1}v) = T(\lambda^{n-1} v) = \lambda^n v$$
+در نتیجه:
+$$f(T)v = (\sum_{i=0}^m a_i T^i)v = \sum_{i=0}^m a_i T^i(v) = \sum_{i=0}^m a_i \lambda^i v = f(\lambda) v \; .   $$
+
+\textbf{نتیجه:} اگر $\lambda_1 , \cdots , \lambda_n$ مقادیر ویژه‌ی ماتریس $A$ باشد، آنگاه $\lambda_1^k , \cdots, \lambda_n^k$ مقادیر ویژه‌ی ماتریس $A^k$ است.\\
+\textbf{لم:} فرض کنید $T$ تبدیل خطی روی فضا‌ی خطی با بعد متناهی $V$ است. اگر $\lambda_1 , \cdots, \lambda_k$ مقادیر ویژه‌ی متمایز $T$ باشند و $W_i$ به ازای هر $1\leq i \leq k$، فضا‌ی ویژه‌ی مربوط به مقدار ویژه $\lambda_i$ باشد و $v_1+\cdots+v_k = 0$ آنگاه $v_1 = \cdots = v_k= 0$.\\
+\textbf{برهان:} به ازای هر $j$، $1\leq j \leq k$ تعریف کنید:
+$$f_j(x) = \frac{\prod_{i\neq j , i=1}^k (x - c_i)}{\prod_{i\neq j , i=1}^k (c_j - c_i)}$$
+همچنین چون $v_i \in W_i$، پس $T(v_i) = \lambda_iv_i$. بنا به لم قبل:
+$$f_j(T)(v_1+\cdots+v_k) = f_j(T)v_1 + \cdots+ f_j(T)v_k = f_j(\lambda_1)v_1 + \cdots + f_j(\lambda_k)v_k$$
+چون $v_1+\cdots+v_k = 0$ بنابراین:
+$$f_j(T)(v_1+\cdots+v_k) = f_j(T)(0) = 0$$
+در نتیجه:
+$$f_j(\lambda_1)v_1 + \cdots+ f_j(\lambda_k)v_k  = 0$$
+به وضوح $f_j(\lambda_j) = 1$ و $f_j(\lambda_i) = 0$ به ازای هر $1\leq i\leq k$ و $i\neq j$. بنابراین $v_j = 0$.\\
+\textbf{لم:} فرض کنید $T$ تبدیل خطی روی فضا‌ی با بعد متناهی $V$ است. اگر $\lambda_1,\cdots,\lambda_k$ مقادیر‌ویژه‌ی متمایز $T$ باشند و $W_i$ فضا‌ی ویژه‌ی مربوط به مقدار ویژه‌ی $\lambda_i$ باشد، در این صورت:
+$$dim\: (W_1 + \cdots+ W_k) = \sum_{i=1}^k dim \: W_i$$
+\textbf{برهان:} فرض کنید $B_i = \{V_{i1} , \cdots, V_{i{n_i}}\}$ پایه‌ی $W_i$ است که در آن $dim \:W_i = n_i$. ادعا می‌کنیم $\cup_{i=1}^k B_i$ پایه‌ای برای زیر‌فضا‌ی  $W_1+\cdots+W_k$ است.\\
+\begin{itemize}
+	\item استقلال عناصر $\cup_{i=1}^k B_i$: فرض کنید:
+	$$(c_{11}v{11}+\cdots + c_{1n_1}v_{1n_1}) + \cdots + (c_{k1}v{k1} + \cdots + (c_{k1}v_{k1} + \cdots+ c_{kn_k}v_{kn_k}) = 0$$
+	قرار دهید $v_i = c_{i1}v_{i1} + \cdots + c_{in_i}v_{in_i}$. بنابراین $v_1+\cdots+v_k = 0$ بنا به لم به ازای هر $1\leq i \leq k$، $v_i =0$. از طرفی چون $B_i$ پایه‌ای برای $W_i$ است پس $c_{i1} = \cdots = c_{in_i} = 0$.
+	\item فرض کنید $v_1+ \cdots +v_k \in W_1+\cdots+W_k$. در این صورت هر $v_i$ ترکیب خطی از عناصر $B_i$ است. پس $v_1+\cdots+v_k$ ترکیب خطی عناصر $\cup_{i=1}^k B_i$ است.\\
+	در نتیجه $\cup_{i=1}^k B_i$ پایه‌ای برای $W_1+\cdots+W_k$ است و لذا حکم ثابت می‌شود زیرا به ازای هر $i\neq j$، $B_i\cap B_j = \emptyset $:
+	$$dim\: (W_1+\cdots + W_k) = |\cup_{i=1}^k B_i| = \sum_{i=1}^k|B_i| = \sum_{i=1}^n dim\: W_i$$
+\end{itemize}
+\textbf{اثبات قضیه‌ی مربوط به قطر‌سازی:}\\
+\begin{itemize}
+	\item $2 \Leftarrow 1$: طی یادداشت جلسه‌ی قبل ثابت شد.
+	\item $3 \Leftarrow 2$: می‌دانیم که درجه‌ی چند‌جمله‌ای برابر با درجه‌ی فضا‌ی $V$ است. از طرفی:
+	$$f(x) = (x-\lambda_1)^{n_1} \cdots (x-\lambda_k)^{n_k}$$
+	بنابراین :
+	$$dim\: V = n_1+\cdots+ n_k = dim\: W_1+ \cdots + dim\: W_k$$
+	\item $1 \Leftarrow 3$: $W_1+ \cdots+ W_k \subseteq V$ زیرفضا است. بنا به لم $dim\: (W_1+ \cdots+ W_k) = \sum_{i=1}^n dim\: W_i$. بنا به فرض $\sum_{i=1}^n dim \:W_i = dim\: V$. بنابراین $V = W_1+\cdots+ W_k$. \\
+	اگر $B_i$ پایه‌ای برای $W_i$ باشد، بنا به لم $\cup_{i=1}^k B_i$ پایه‌ای برای $W_1+\cdots+W_k = V$ است. بنابراین ماتریس نمایش $T$ در پایه‌ی $B = \cup_{i=1}^k B_i$، $[T]_B$ قطری است.
+\end{itemize}
+
+
+\textbf{مثال:}
+فرض کنید
+$A=\begin{bmatrix}
+5 & -6 & -6 \\
+-1 & 4 & 2 \\
+3 & -6 & -4
+\end{bmatrix}$؛
+در این صورت، $A^{550}$ را بیابید.
+
+\textbf{حل:}
+$$f(x)=det(xI-A)=(x-1)(x-2)^2 \to \lambda_1=2, \lambda_2=1 $$
+$$ W_1 = N(2I-A)=N(\begin{bmatrix}
+3 & -6 & -6 \\
+-1 & 2 & 2 \\
+3 & -6 & -7
+\end{bmatrix}) \to dimW_1 = 2$$
+به راحتی می‌توان دید که
+$v_1 = \begin{bmatrix}
+2 \\
+0 \\
+1
+\end{bmatrix} $
+و
+$v_2 = \begin{bmatrix}
+0 \\
+1 \\
+-1
+\end{bmatrix} $
+بردارهای ویژه‌ی متناظر با
+$\lambda_1=2$
+و
+$\{v_1,v_2\}$
+پایه‌ای برای $W_1$ است.
+
+$$ W_2 = N(I-A)=N(\begin{bmatrix}
+-4 & 6 & 6 \\
+1 & -3 & -2 \\
+-3 & 6 & 5
+\end{bmatrix}) \to dimW_2 = 1 \; , \; \; v_3 = \begin{bmatrix}
+3 \\
+-1 \\
+3
+\end{bmatrix}$$
+
+بردار ویژه‌ی
+$\lambda_2=1$
+است.
+
+بنابراین، چون
+$dimW_1+dimW_2=dimV$
+پس $T$ قطری‌شدنی است. قرار دهید
+$S=\begin{bmatrix}
+v_1 & v_2 & v_3
+\end{bmatrix}$
+در این صورت،
+$S^{-1}AS = \begin{bmatrix}
+2 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix}$
+بنابراین
+$$S^{-1}A^{550}S = \begin{bmatrix}
+2^{550} & 0 & 0 \\
+0 & 2^{550} & 0 \\
+0 & 0 & 1^{550} \\
+\end{bmatrix} \to A^{550} = S  \begin{bmatrix}
+2^{550} & 0 & 0 \\
+0 & 2^{550} & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix} S^{-1} $$
+
+\textbf{یادداشت:}
+فرض کنید ماتریس $A$ قطری‌شدنی باشد. بنا به قضیه، چندجمله‌ای ویژه‌ی $A$ به صورت
+$$f(x)=(x-\lambda_1)^{n_1} \cdots (x-\lambda_k)^{n_k}$$
+است و ماتریس وارون‌پذیر $S$ وجود دارد که
+
+$$S^{-1}AS = \begin{bmatrix}
+\lambda_1 I_{n_1} & \cdots \\
+\vdots & \cdots \\
+ \cdots & \lambda_k I_{n_k}\\
+\end{bmatrix}$$
+
+از طرفی
+$det(xI-A)=det(xI-S^{-1}AS)$
+بنابراین $A$ و $S^{-1}AS$ چندجمله‌ای ویژه‌ی یکسانی دارند، زیرا
+
+$$f(A)=f(S^{-1}AS)=(\begin{bmatrix}
+\lambda_1 I_{n_1} & \cdots \\
+\vdots & \cdots \\
+\cdots & \lambda_k I_{n_k}\\
+\end{bmatrix}-\lambda_1 I)^{n_1} \cdots (\begin{bmatrix}
+\lambda_1 I_{n_1} & \cdots \\
+\vdots & \cdots \\
+\cdots & \lambda_k I_{n_k}\\
+\end{bmatrix}-\lambda_k I)^{n_k}=0 $$
+حال این سوال مطرح می‌شود که آیا به ازای هر ماتریسی مانند $A$ این خاصیت برقرار است (یعنی $f(A)=0$ که در آن $f(x)$ چندجمله‌ای ویژه‌ی $A$ است)؟ سوال مشابه به طور واضحی برای هر تبدیل خطی $T$ روی فضای برداری با بعد متناهی $n$ قابل طرح است.
+
+قضیه‌ای توسط کیلی و همیلتون ثابت شده است که نتیجه می‌دهد $f(A)=0$ (که در آن $f$ چندجمله‌ای ویژه‌ی $A$ است) به ازای هر ماتریسی و مشابها برای هر تبدیل خطی روی فضای برداری با بعد متناهی.
+
+\textbf{پرسش:}
+فرض کنید $A\in M_n(F)$ و 
+$f(x)=det(xI-A)$
+چندجمله‌ای ویژه‌ی $A$ باشد. اشکال اثبات زیر را بیابید:
+$$f(A)=det(AI-A)=det(0)=0$$
+
+برای اثبات قضیه‌ی کیلی-همیلتون، باید چندجمله‌ای $f(x)=det(xI-A)$ را باز کنیم.
+
+\textbf{قضیه‌ی کیلی-همیلتون:}
+
+اگر $A\in M_n(F)$ و $F$ برابر $R$ یا $\Phi$ بوده و $f(x)$ چندجمله‌ای ویژه‌ی $A$ باشد، آن‌گاه $f(A)=0$.
+
+\textbf{برهان:}
+
+فرض کنید
+
+$$f(x) = =det(xI-A)=x^n+a_{n-1}x^{n-1}+\cdots+a_1x + a_0$$
+از طرفی، می‌دانیم که
+$$(xI-A)adj(xI-A) = det(xI-A)I \; \; (*)$$
+
+بنابراین به محاسبه‌ی درایه‌های $adj(xI-A)$ می‌پردازیم. برای محاسبه‌ی درایه‌ی $ij$ ام $adj(xI-A)$ باید سطر $j$ ام و ستون $i$ ام ماتریس $(xI-A)$ را حذف کنیم، سپس دترمینان آن را محاسبه کرده و آن‌گاه در
+$(-1)^{i+j}$
+ضرب کنیم. در نتیجه، درایه‌ی $ij$ ام $adj(xI-A)$ یک چندجمله‌ای از درجه‌ی حداکثر $n-1$ بر حسب $x$ است، پس می‌توان ماتریس $adj(xI-A)$ را برحسب جملات $1$ و $x$ و... و $x^{n-1}$ نوشت، یعنی:
+
+$$adj(xI-A)=B_{n-1}x^{n-1}+B_{n-2}x^{n-2}+\cdots+B_1x+B_0$$
+
+به‌طوری‌که $B_i\in M_n(F)$ به ازای هر $i$ که
+$0\leq i \leq n-1$
+بنا به رابطه‌ی (*) داریم:
+$$(xI-A)(B_{n-1}x^{n-1}+B_{n-2}x^{n-2}+\cdots+B_1x+B_0)=(x^n+a_{n-1}x^{n-1}+\cdots+a_1x + a_0)I$$
+
+از اتحاد فوق استفاده می‌کنیم و روابط زیر استخراج می‌شود:
+
+$$ B_{n-1}=I \to A^nB_{n-1} = A^n $$
+$$ B_{n-2}-AB_{n-1}=a_{n-1}I \to A^{n-1}B_{n-2}- A^nB_{n-1} = a_{n-1}A^{n-1} $$
+$$ B_{n-3}-AB_{n-2}=a_{n-2}I \to A^{n-2}B_{n-3}- A^{n-1}B_{n-2} = a_{n-2}A^{n-2} $$
+$$ \vdots $$
+$$ B_{0}-AB_{1}=a_{1}I \to AB_{0}- A^{2}B_{1} = a_{1}A $$
+$$ -AB_0 = a_0I \to -AB_0=a_0I$$
+
+و در نتیجه، با جمع طرف راست روابط فوق، داریم:
+
+$$0=A^n + a_{n-1}A^{n-1}+\cdots + a_0I = f(A) \; .$$
+
+

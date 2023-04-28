@@ -1,0 +1,114 @@
+\documentclass[11pt, a4paper]{book}
+
+\usepackage{mathtools,amsfonts,amsmath,amsthm,amscd, amssymb,setspace, thmtools}
+\usepackage{tikz}
+\usetikzlibrary{calc} 
+\usepackage{braket}
+\usepackage{physics}
+\usepackage[paperwidth=16.5cm,paperheight=23.5cm,width=12.5cm,height=19cm,left=2cm,top=3cm]{geometry}
+\usepackage{fancyhdr} 
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{colortbl,array,arydshln}
+\usepackage{multirow,bigdelim}
+\usepackage{booktabs}
+
+\usepackage{zref-perpage}
+\usepackage[extrafootnotefeatures]{xepersian}
+\paragraphfootnotes
+\zmakeperpage{footnote}
+\makeatletter
+\def\LTRfootscript#1{{#1) }}
+
+\pagestyle{fancy}
+\fancyhead[LO,RE]{\bf\small\thepage}
+\fancyhead[LE]{\bf\small\leftmark\vphantom{حِ}}
+\fancyhead[RO]{\bf\small\rightmark\vphantom{حِ}}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{.4pt}
+
+\long\def\@makecaption#1#2{%
+	\vskip \abovecaptionskip 
+	\sbox \@tempboxa {\small{\bf #1} #2}%
+	\ifdim \wd \@tempboxa >\hsize 
+		\if@RTL 
+			\beginR 
+		\fi 
+		{\small{\bf #1} #2}%
+		\if@RTL 
+			\endR 
+		\fi 
+		\par 
+	\else 
+		\global \@minipagefalse 
+		\hb@xt@ \hsize {%
+			\if@RTL 
+				\beginR 
+			\fi 
+			\hfil 
+			\box \@tempboxa 
+			\hfil 
+			\if@RTL 
+				\endR 
+			\fi 
+		}%
+	\fi 
+	\vskip \belowcaptionskip
+}
+
+\linespread{1.05}
+\advance\parskip.5ex plus.5ex minus.5ex
+
+
+\settextfont{XB Niloofar}
+\setdigitfont{XB Niloofar}
+
+
+\renewcommand{\labelenumii}{\Alph{enumii})}
+\newtheorem{theorem}{قضیه}
+\newtheorem{lemma}{لم}
+\newtheorem{example}{مثال}
+\newtheorem{definition}{تعریف}
+\newenvironment{solution}[1]{%
+{\noindent\bf
+راه‌حل.
+}#1}{}
+\newenvironment{remark}[1]{%
+	{\noindent\bf
+		نکته.
+	}#1}{}
+\newenvironment{notation}[1]{%
+	{\noindent\bf
+		نمادگذاری.
+	}#1}{}
+\newenvironment{question}[1]{%
+	{\noindent\bf
+		سوال.
+	}#1}{}
+\DeclareMathOperator{\nullspace}{null}
+\DeclareMathOperator{\spann}{span}
+\newcommand\spanset[1]{\ensuremath\spann(#1)}
+
+\newcommand{\answer}[1]{#1}
+%\renewcommand{\answer}[1]{}
+
+\newcommand{\namelistlabel}[1]{\mbox{#1}\hfil}
+\newenvironment{namelist}[1]{%1
+	\begin{list}{}
+		{
+			\let\makelabel\namelistlabel
+			\settowidth{\labelwidth}{#1}
+			\setlength{\leftmargin}{1.1\labelwidth}
+		}
+	}{%1
+\end{list}}
+
+
+\title{یادداشت‌های جبر خطی}
+\date{}
+\author{سارا رجب‌زاده\\سید پارسا نشایی\\مهدی صالح}
+
+%\doublespacing
+%\onehalfspacing
+\renewcommand{\baselinestretch}{1.3}
